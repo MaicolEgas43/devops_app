@@ -61,7 +61,7 @@ jobs:
               git pull
             fi
             cd /home/ec2-user/devops_app
-            docker-compose up -d app
+            docker compose up -d app
 
   deploy-monitoring:
     needs: build-and-push
