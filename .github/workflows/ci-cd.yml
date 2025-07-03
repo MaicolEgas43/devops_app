@@ -60,7 +60,7 @@ jobs:
               cd /home/ec2-user/devops_app
               git pull
             fi
-            cd /home/ec2-user/devops_app
+            cd /home/ec2-user/devops_app/app
             docker compose down || true
             docker compose -f docker-compose.yaml up -d app
 
