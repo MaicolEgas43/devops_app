@@ -59,7 +59,7 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd home/ec2-user
+            cd /home/ec2-user
             git pull
             docker compose up -d app
 
@@ -75,6 +75,6 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd home/ec2-user
+            cd /home/ec2-user
             git pull
             docker compose up -d prometheus grafana 
