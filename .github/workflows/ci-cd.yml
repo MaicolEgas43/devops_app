@@ -61,7 +61,7 @@ jobs:
               git pull
             fi
             cd /home/ec2-user/devops_app
-            docker compose up -d app
+            docker compose -f docker-compose.yaml up -d app
 
   deploy-monitoring:
     needs: build-and-push
@@ -76,4 +76,4 @@ jobs:
           script: |
             cd /home/ec2-user/devops_app
             git pull
-            docker compose up -d prometheus grafana 
+            docker compose -f docker-compose.yaml up -d prometheus grafana 
