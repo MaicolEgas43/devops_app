@@ -50,7 +50,6 @@ jobs:
   deploy-app:
     needs: build-and-push
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && (github.event.head_commit.modified && contains(join(github.event.head_commit.modified, ','), 'app/'))
     steps:
       - name: Deploy App to EC2
         uses: appleboy/ssh-action@v1.0.0
@@ -66,7 +65,6 @@ jobs:
   deploy-monitoring:
     needs: build-and-push
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && (github.event.head_commit.modified && contains(join(github.event.head_commit.modified, ','), 'monitoring/'))
     steps:
       - name: Deploy Monitoring Stack to EC2
         uses: appleboy/ssh-action@v1.0.0
